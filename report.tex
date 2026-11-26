@@ -65,9 +65,22 @@ in Gazebo Harmonic that can traverse from the
 start of the Meston building to the end goal
 whilst avoiding fire. To help it on its journey
 it has various sensors such as a camera, a thermometer,
-and a fire extinguisher. 
+and a fire extinguisher. The robot builds a path using an A* 
+search algorithm, if it runs into an obstacle it 
+will use the same algorithm to reroute until it 
+reaches the goal or determines there is no valid path 
+to the goal.
 
 \section{Robot}
+
+THe robot we have chosen was obtained by us on GitHub. 
+After carefully going through multiple candidates we eventually 
+found one to satisfy our needs. Initially we even planned on 
+building our own due to how much we were struggling to 
+find a suitable option, but we were advised against it. 
+Our main motivation was finding a robot that has the sensors 
+we needed though we soon realised it was easier to add them 
+ourselves, which led to us taking the new approach that we did.
 
 \section{Task}
 
