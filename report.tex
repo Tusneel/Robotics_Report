@@ -112,7 +112,9 @@ Another change we made was to make the fire static. We attempted to use
 Conway's game of life to determine the robots movement but decided it 
 wasn't the best use for it. It didn't make the fire dynamic in any way 
 that was meaningful. As such we had settled on static fire on the ground 
-floor of the Meston building.
+floor of the Meston building. This fulfilled our needs as it had more than 
+one path to the goal and we didn't have to worry about stairs allowing 
+our robots movement to be more straightforward.
 
 \section{Libraries and Tools}
 Our project used ROS2-jazzy \cite{ros2} with the Gazebo simulation enviroment 
@@ -127,13 +129,9 @@ with debugging.
 
 \subsection{Strengths}
 The most major strength of our robot design is its resilience and ability 
-
 to re-evaluate its approach when something goes wrong. For example, when 
-
-our robot's plan puts it in harms way, it is able to acknowledge this, 
-reverse 
-out of danger and then, when safe, create a new plan taking into 
-account its new 
+our robot's plan puts it in harms way, it is able to acknowledge this, reverse 
+out of danger and then, when safe, create a new plan taking into account its new 
 found knowledge of the environment. 
 
 \subsection{Limitations}
