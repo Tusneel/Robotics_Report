@@ -63,11 +63,11 @@
 \section{Introduction}
 
 For this project our group has created a robot
-in Gazebo Harmonic using ROS2 that can traverse from the
-start of a building (Meston in the case of our simulation) to an end goal
+in Gazebo Harmonic \cite{gazebodocs} using ROS2 (Robot Operating System 2) \cite{ros2} that can traverse from the
+start of a building (Meston in an case of our simulation) to an end goal
 whilst avoiding fire. To help it on its journey
-it has various sensors such as a camera, a thermometer,
-and a fire extinguisher. The robot builds a path using an A* 
+it has various sensors such as a camera, a thermometer
+and is equipped fire extinguisher. The robot builds a path using an implementation of the A* 
 search algorithm, if it runs into an obstacle it 
 will use the same algorithm to reroute until it either 
 reaches the goal or determines there is no valid path 
@@ -75,14 +75,26 @@ to the goal and instead returns to the start.
 
 \section{Robot}
 
-The robot we have chosen was obtained by us on GitHub \cite{robot} 
+The robot we have chosen was obtained from GitHub by us. \cite{robot} 
 After carefully going through multiple candidates we eventually 
-found one to satisfy our needs. Initially we even planned on 
+found one to satisfy our needs. Initially we had planned on 
 building our own due to how much we were struggling to 
 find a suitable option, but we were advised against it. 
-Our main motivation was finding a robot that has the sensors 
-we needed though we soon realised it was easier to add them 
-ourselves, which led to us taking the new approach that we did.
+Our main motivation instead then was finding a minimal robot that has some sensors 
+we needed and adding further sensors ourselves as it was easier to add them 
+ourselves than find a robot that fit our specific requirement,
+which led to us taking approach that we did.\\\\
+\begin{tabular}{|c | p{4.5cm} |} 
+\hline
+ Sensor & Requirement \\
+ \hline
+Odometry & Provides location data to navigate maze and determine if the goal has been reached. \\ 
+ \hline
+ RGBD Camera & Determines when robot is close enough to a fire to use fire-extinguisher.  \\
+  \hline
+ Thermometer & Detects when fire is nearby in conjunction with RGBD Camera.  \\
+   \hline
+\end{tabular}
 
 \section{Task}
 
@@ -115,12 +127,11 @@ our robots movement to be more straightforward and we didn't have to worry about
 dealing with multiple floors in Gazebo. 
 
 \section{Libraries and Tools}
-Our project used ROS2-jazzy \cite{ros2} with the Gazebo simulation enviroment 
-\cite{gazebodocs}. In order to develop with ROS we used the rclpy python API 
-provided with ROS*. Gazebo provided an easy framework for modifying the robot 
+Our project used ROS2-jazzy with the Gazebo simulation enviroment. In order to develop with ROS we used the rclpy python API 
+also provided by Open Robotics. Gazebo provided an easy framework for modifying the robot 
 we found, with the robot and world being written using custom XML files, and 
-provided a set of useful custom sensors of which we used RGBD Sensor and Odometry. 
-In addition to these we also used RVIZ to visualise our ROS topics which helped 
+provided a set of useful custom sensors that we used such as the RGBD Camera. 
+In addition to these we also used RVIZ \cite{rviz} to visualise our ROS nodes and topics which helped 
 with debugging.
 
 \section{Discussion}
