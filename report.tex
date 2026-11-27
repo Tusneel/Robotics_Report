@@ -63,15 +63,15 @@
 \section{Introduction}
 
 For this project our group has created a robot
-in Gazebo Harmonic that can traverse from the
+in Gazebo Harmonic using ROS2 that can traverse from the
 start of the Meston building to the end goal
 whilst avoiding fire. To help it on its journey
 it has various sensors such as a camera, a thermometer,
 and a fire extinguisher. The robot builds a path using an A* 
 search algorithm, if it runs into an obstacle it 
-will use the same algorithm to reroute until it 
+will use the same algorithm to reroute until it either 
 reaches the goal or determines there is no valid path 
-to the goal.
+to the goal and instead returns to the start.
 
 \section{Robot}
 
@@ -166,6 +166,7 @@ We achieved this using ros2 and modelling the problem in gazebo.
 Finally, we have many aspects of this project we would love to expand upon given additional time and resources. 
 \clearpage
 \printbibliography
+
 
 
 % TO WHOEVER FILLS THIS, DO NOT INCLUDE THE WORDS FROM THE REFERENCES. THOSE DO NOT COUNT.
